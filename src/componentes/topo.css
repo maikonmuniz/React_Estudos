@@ -1,0 +1,14 @@
+.menu{
+    list-style: none;
+    display: flex;
+}
+.menu li{
+    letter-spacing: 3px;
+    margin-left: 32px;
+    color: rgb(255, 255, 255);
+}
+
+.menu li:hover{
+
+    color: rgb(190, 190, 190);
+}
