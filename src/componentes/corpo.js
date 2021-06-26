@@ -11,8 +11,8 @@ export default function Corpo(){
 
     return (
         <section>
-
-            <p>React Js</p>
+        
+        
 
         </section>
     );

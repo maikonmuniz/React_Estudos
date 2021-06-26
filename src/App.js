@@ -7,6 +7,8 @@ import Relogio from './componentes/Relogio';
 import Numero from './componentes/numero'
 import Evento from './componentes/superman';
 import './App.css'
+import userEvent from '@testing-library/user-event';
+import { unstable_renderSubtreeIntoContainer } from 'react-dom';
 
 export default function App() {
 
@@ -23,6 +25,8 @@ export default function App() {
       <p key={i}>chave {i} - heroi {h.Heroi}, Nome {h.Nome}</p>
 
   )
+
+  const [fo, setFor] = useState('')
 
   const [num, setNum] = useState(10)
   const [ligado, setLigado] = useState(false)
@@ -61,10 +65,20 @@ export default function App() {
       <Numero num={num} setNum={setNum}/>
       {comprimento()}
       {listaHerois}
+
+
+      <input type='text' 
+      value={fo}
+      onChange = {(f) => setFor(f.target.value)}
+      />
+
+      <p>Nome: {fo}</p>
+
       <p>{log?'Usuario não logado':'Usuario Logado'}</p>
       <button onClick={()=>setLog(!log)}>{log?'logoff':'login'}</button><br/>
       <Evento ligado={ligado} setLigado={setLigado}/>
       <Corpo />
+
     </section>
     </>
 
